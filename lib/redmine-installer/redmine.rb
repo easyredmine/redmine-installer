@@ -415,6 +415,11 @@ module RedmineInstaller
 
       def bundle_install
         gemfile = File.join(root, 'Gemfile')
+        
+        if !Gem.available?('bundler')
+          run_command("gem install bundler", 'Bundle install')
+        end
+        
         status = run_command("bundle install #{task.options.bundle_options} --gemfile #{gemfile}", 'Bundle install')
 
         # Even if bundle could not install all gem EXIT_SUCCESS is returned
