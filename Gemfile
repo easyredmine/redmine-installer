@@ -6,3 +6,6 @@ gemspec
 gem 'pry'
 gem 'rspec'
 gem 'childprocess'
+gem 'bundler'
+
+
