@@ -13,7 +13,7 @@ module RedmineInstaller
     end
 
     def run
-      Bundler.with_clean_env do
+      Bundler.with_unbundled_env do
         run!
       end
     end
