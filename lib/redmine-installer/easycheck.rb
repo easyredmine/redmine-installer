@@ -7,7 +7,7 @@ module RedmineInstaller
     EASYCHECK_SH = 'https://raw.githubusercontent.com/easyredmine/easy_server_requirements_check/master/easycheck.sh'
 
     def self.run
-      Bundler.with_clean_env do
+      Bundler.with_unbundled_env do
         if Kernel.system('which', 'wget')
           Open3.pipeline(['wget', EASYCHECK_SH, '-O', '-', '--quiet'], 'bash')
 
